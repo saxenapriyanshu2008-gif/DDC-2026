@@ -55,7 +55,7 @@
     <nav class="nav" aria-label="Main">
       <a href="#teaser">Teaser</a>
       <a href="#missions">Missions</a>
-      <a href="#crew">Crew</a>
+      <a href="#gallery">Gallery</a>
       <a href="#join">Register</a>
     </nav>
   </header>
@@ -126,6 +126,7 @@
           <li>Break the rule and you take a sour shot</li>
           <li>Fastest crew to solve every problem wins the mission</li>
         </ul>
+        <a class="mission__btn" href="[ROUND 1 LINK]">Round 1<svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18"><path d="M3 9h11M10 4l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </article>
       <article class="mission mission--orange">
         <div class="mission__top"><span class="mission__num">02</span><span class="mission__label">Mission</span></div>
@@ -136,6 +137,7 @@
           <li>No notes, no phones</li>
           <li>Most correct answers wins the mission</li>
         </ul>
+        <a class="mission__btn" href="[ROUND 2 LINK]">Round 2<svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18"><path d="M3 9h11M10 4l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </article>
       <article class="mission mission--teal">
         <div class="mission__top"><span class="mission__num">03</span><span class="mission__label">Mission</span></div>
@@ -164,16 +166,54 @@
     </div>
   </section>
 
-  <section id="crew" class="section container">
-    <div class="section__head">
-      <p class="eyebrow">Meet the crew</p>
-      <h2 class="h2">The people<br>running the job.</h2>
-    </div>
-    <div class="crew">
-      <article class="crew__card"><div class="crew__photo" style="--tint:#5A1A3E"><span class="crew__ph">[PHOTO]</span><span class="crew__alias">The Boss</span></div><div class="crew__info"><strong>[NAME]</strong><span>[ROLE] · Event Lead</span></div></article>
-      <article class="crew__card"><div class="crew__photo" style="--tint:#163A4A"><span class="crew__ph">[PHOTO]</span><span class="crew__alias">The Hacker</span></div><div class="crew__info"><strong>[NAME]</strong><span>[ROLE] · Tech Lead</span></div></article>
-      <article class="crew__card"><div class="crew__photo" style="--tint:#4A2A12"><span class="crew__ph">[PHOTO]</span><span class="crew__alias">The Artist</span></div><div class="crew__info"><strong>[NAME]</strong><span>[ROLE] · Design Lead</span></div></article>
-      <article class="crew__card"><div class="crew__photo" style="--tint:#2E1A4A"><span class="crew__ph">[PHOTO]</span><span class="crew__alias">The Fixer</span></div><div class="crew__info"><strong>[NAME]</strong><span>[ROLE] · Operations</span></div></article>
+  <section id="gallery" class="gallery" aria-label="Gallery">
+    <div class="gallery__pin">
+      <div class="container gallery__head">
+        <p class="eyebrow">Gallery</p>
+        <h2 class="h2">Explore the city.</h2>
+      </div>
+      <div class="gallery__track" id="galleryTrack">
+        <figure class="gcard">
+          <img src="assets/gallery/bennett.jpg" alt="Bennett University" loading="lazy">
+          <figcaption><span>Where it goes down</span><strong>Bennett University</strong></figcaption>
+        </figure>
+        <figure class="gcard">
+          <img src="assets/gallery/city.jpg" alt="The City" loading="lazy">
+          <figcaption><span>Quiet. Not for long.</span><strong>The City</strong></figcaption>
+        </figure>
+        <figure class="gcard">
+          <img src="assets/gallery/zero-talking.jpg" alt="Zero Talking" loading="lazy">
+          <figcaption><span>House rule</span><strong>Zero Talking</strong></figcaption>
+        </figure>
+        <figure class="gcard">
+          <img src="assets/gallery/getaway.jpg" alt="The Getaway Laptop" loading="lazy">
+          <figcaption><span>Mission 01</span><strong>The Getaway Laptop</strong></figcaption>
+        </figure>
+        <figure class="gcard">
+          <img src="assets/gallery/winners.jpg" alt="Round 1 Winners" loading="lazy">
+          <figcaption><span>Fastest crew wins</span><strong>Round 1 Winners</strong></figcaption>
+        </figure>
+        <figure class="gcard">
+          <img src="assets/gallery/busted.jpg" alt="Busted" loading="lazy">
+          <figcaption><span>Three shots and you are out</span><strong>Busted</strong></figcaption>
+        </figure>
+        <figure class="gcard">
+          <img src="assets/gallery/stakeout.jpg" alt="The Stakeout" loading="lazy">
+          <figcaption><span>Mission 02</span><strong>The Stakeout</strong></figcaption>
+        </figure>
+        <figure class="gcard">
+          <img src="assets/gallery/shush.jpg" alt="Classified" loading="lazy">
+          <figcaption><span>Mission 03</span><strong>Classified</strong></figcaption>
+        </figure>
+        <figure class="gcard">
+          <img src="assets/gallery/title.jpg" alt="Drink. Derive. Code." loading="lazy">
+          <figcaption><span>DDC'26</span><strong>Drink. Derive. Code.</strong></figcaption>
+        </figure>
+        <figure class="gcard">
+          <img src="assets/gallery/stall.jpg" alt="The ACM Stall" loading="lazy">
+          <figcaption><span>Find us on the day</span><strong>The ACM Stall</strong></figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 

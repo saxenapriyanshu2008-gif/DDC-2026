@@ -135,22 +135,26 @@ a:hover { color: #FFC27D; }
 .heat__box--3 span { font-weight: 700; }
 .heat__note { margin: 16px 0 0; font-size: 14px; color: var(--mute); }
 
-/* ---------- gallery: pinned section, cards slide sideways as you scroll ---------- */
-.gallery { position: relative; }
-.gallery__pin { position: sticky; top: 0; height: 100vh; overflow: hidden; display: flex; flex-direction: column; justify-content: center; gap: 36px; }
+/* ---------- gallery: endless drift, pauses on hover, hovered card grows ---------- */
+.gallery { position: relative; padding: 100px 0 60px; }
+.gallery__pin { position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 20px; }
 .gallery__head { position: relative; z-index: 3; width: 100%; display: flex; flex-direction: column; gap: 12px; }
-.gallery__track { display: flex; gap: 24px; padding: 0 max(24px, calc((100vw - 1280px) / 2 + 24px)); width: max-content; will-change: transform; }
-.gallery__pin::before, .gallery__pin::after { content: ""; position: absolute; top: 0; bottom: 0; width: 12vw; z-index: 2; pointer-events: none; }
-.gallery__pin::before { left: 0; background: linear-gradient(90deg, var(--ink), rgba(14, 11, 20, 0)); }
-.gallery__pin::after { right: 0; background: linear-gradient(270deg, var(--ink), rgba(14, 11, 20, 0)); }
-.gcard { position: relative; margin: 0; flex: 0 0 auto; width: clamp(210px, 23vw, 340px); aspect-ratio: 480 / 676; overflow: hidden; border: 1px solid #3A2236; background: var(--panel);
-  box-shadow: 0 0 0 1px rgba(255, 62, 138, .15), 0 18px 40px rgba(0, 0, 0, .5); transition: transform .25s, box-shadow .25s; }
-.gcard img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.gallery__viewport { position: relative; overflow: hidden; padding: 40px 0 50px; }
+.gallery__viewport::before, .gallery__viewport::after { content: ""; position: absolute; top: 0; bottom: 0; width: 10vw; z-index: 4; pointer-events: none; }
+.gallery__viewport::before { left: 0; background: linear-gradient(90deg, var(--ink), rgba(14, 11, 20, 0)); }
+.gallery__viewport::after { right: 0; background: linear-gradient(270deg, var(--ink), rgba(14, 11, 20, 0)); }
+.gallery__track { display: flex; gap: 24px; width: max-content; animation: drift 70s linear infinite; }
+.gallery__viewport:hover .gallery__track, .gallery__viewport:focus-within .gallery__track { animation-play-state: paused; }
+@keyframes drift { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(calc(-50% - 12px), 0, 0); } }
+.gcard { position: relative; margin: 0; flex: 0 0 auto; width: clamp(210px, 23vw, 320px); aspect-ratio: 480 / 676; overflow: hidden; border: 1px solid #3A2236; background: var(--panel);
+  box-shadow: 0 0 0 1px rgba(255, 62, 138, .15), 0 18px 40px rgba(0, 0, 0, .5); transition: transform .3s ease, box-shadow .3s ease; }
+.gcard img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
 .gcard figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 48px 16px 16px; display: flex; flex-direction: column; gap: 4px;
   background: linear-gradient(0deg, rgba(14, 11, 20, .95) 0%, rgba(14, 11, 20, .7) 55%, rgba(14, 11, 20, 0) 100%); }
 .gcard figcaption span { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--teal); }
 .gcard figcaption strong { font-family: var(--display); font-weight: 400; font-size: clamp(22px, 2vw, 28px); line-height: 1.05; text-transform: uppercase; letter-spacing: 1px; }
-.gcard:hover { transform: translateY(-8px); box-shadow: 0 0 0 1px var(--pink), 0 0 30px rgba(255, 62, 138, .35), 0 24px 50px rgba(0, 0, 0, .6); }
+.gcard:hover { transform: scale(1.14); z-index: 5; box-shadow: 0 0 0 2px var(--pink), 0 0 40px rgba(255, 62, 138, .5), 0 30px 60px rgba(0, 0, 0, .7); }
+.gcard:hover img { transform: scale(1.06); }
 
 /* ---------- join ---------- */
 .join { position: relative; overflow: hidden; border-top: 1px solid var(--line); background: linear-gradient(0deg, #2B0F3A 0%, var(--ink) 70%); }
@@ -166,7 +170,7 @@ a:hover { color: #FFC27D; }
 /* ---------- phones ---------- */
 @media (max-width: 640px) {
   .gcard { width: 62vw; }
-  .gallery__pin { gap: 24px; }
+  .gallery { padding-top: 70px; }
   .hero { min-height: 720px; }
   .hero__content { padding-top: 32px; padding-bottom: 150px; }
   .hero__lead { font-size: 17px; }
@@ -179,6 +183,6 @@ a:hover { color: #FFC27D; }
 
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; scroll-behavior: auto !important; }
-  .gallery__pin { position: static; height: auto; padding: 100px 0 40px; }
-  .gallery__track { width: auto; overflow-x: auto; transform: none !important; }
+  .gallery__viewport { overflow-x: auto; }
+  .gallery__track { animation: none; }
 }

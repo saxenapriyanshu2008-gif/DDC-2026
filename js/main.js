@@ -42,30 +42,4 @@
     }, { threshold: 0.25 }).observe(video);
   }
 
-  // ---------- gallery: pin the section and slide the cards sideways with the scroll ----------
-  var gallery = document.getElementById('gallery');
-  var track = document.getElementById('galleryTrack');
-  var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (gallery && track && !still) {
-    var distance = 0;
-    var size = function () {
-      distance = Math.max(0, track.scrollWidth - window.innerWidth);
-      gallery.style.height = (window.innerHeight + distance) + 'px';
-      move();
-    };
-    var move = function () {
-      var top = gallery.getBoundingClientRect().top;
-      var p = distance ? Math.min(1, Math.max(0, -top / distance)) : 0;
-      track.style.transform = 'translate3d(' + (-p * distance) + 'px, 0, 0)';
-    };
-    var ticking = false;
-    window.addEventListener('scroll', function () {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(function () { move(); ticking = false; });
-    }, { passive: true });
-    window.addEventListener('resize', size);
-    window.addEventListener('load', size);
-    size();
-  }
 })();

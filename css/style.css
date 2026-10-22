@@ -138,7 +138,7 @@ a:hover { color: #FFC27D; }
 /* ---------- gallery: pinned section, cards slide sideways as you scroll ---------- */
 .gallery { position: relative; }
 .gallery__pin { position: sticky; top: 0; height: 100vh; overflow: hidden; display: flex; flex-direction: column; justify-content: center; gap: 36px; }
-.gallery__head { width: 100%; display: flex; flex-direction: column; gap: 12px; }
+.gallery__head { position: relative; z-index: 3; width: 100%; display: flex; flex-direction: column; gap: 12px; }
 .gallery__track { display: flex; gap: 24px; padding: 0 max(24px, calc((100vw - 1280px) / 2 + 24px)); width: max-content; will-change: transform; }
 .gallery__pin::before, .gallery__pin::after { content: ""; position: absolute; top: 0; bottom: 0; width: 12vw; z-index: 2; pointer-events: none; }
 .gallery__pin::before { left: 0; background: linear-gradient(90deg, var(--ink), rgba(14, 11, 20, 0)); }

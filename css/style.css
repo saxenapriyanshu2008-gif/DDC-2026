@@ -53,11 +53,6 @@ a:hover { color: #FFC27D; }
 .nav a:hover { color: var(--pink); }
 
 /* ---------- hero ---------- */
-.banner { position: relative; width: 100%; }
-.banner__img { display: block; width: 100%; height: auto; aspect-ratio: 1600 / 840; object-fit: cover; }
-.banner__shade { position: absolute; inset: 0;
-  background: linear-gradient(0deg, var(--ink) 0%, rgba(14, 11, 20, 0) 20%), linear-gradient(180deg, var(--ink) 0%, rgba(14, 11, 20, 0) 8%); }
-
 .hero { position: relative; overflow: hidden; min-height: 820px; border-bottom: 1px solid var(--line); display: flex; align-items: flex-end; }
 .hero__sky { position: absolute; inset: 0; background: linear-gradient(180deg, #0E0B14 0%, #2B0F3A 38%, #8E1F5E 62%, #FF5A7A 82%, #FFB347 100%); }
 .hero__sun { position: absolute; left: 50%; bottom: -260px; width: 640px; height: 640px; margin-left: -320px; border-radius: 50%; background: #FFC15E; animation: glow 4s ease-in-out infinite; }

@@ -99,7 +99,7 @@ a:hover { color: #FFC27D; }
 .video-frame video { width: 100%; height: 100%; object-fit: cover; }
 
 /* ---------- missions ---------- */
-.missions { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+.missions { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 24px; }
 .mission { --c: var(--pink); background: var(--panel); border: 1px solid var(--line); border-top: 4px solid var(--c); padding: 32px; display: flex; flex-direction: column; gap: 16px; }
 .mission--orange { --c: var(--orange); }
 .mission--teal { --c: var(--teal); }
@@ -115,7 +115,7 @@ a:hover { color: #FFC27D; }
 .redacted { margin-top: auto; padding: 16px; border: 1px dashed var(--line-2); font-family: var(--display); font-size: 22px; letter-spacing: 3px; text-align: center; color: var(--mute); }
 
 /* ---------- heat ---------- */
-.heat { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px; align-items: center; border: 1px solid var(--line); background: var(--panel); padding: 48px 32px; }
+.heat { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 48px; align-items: center; border: 1px solid var(--line); background: var(--panel); padding: 48px 32px; }
 .heat__text { display: flex; flex-direction: column; gap: 16px; }
 .heat__text p:last-child { margin: 0; font-size: 18px; line-height: 1.6; color: var(--body); }
 .heat__meter { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
@@ -164,16 +164,53 @@ a:hover { color: #FFC27D; }
 
 /* ---------- phones ---------- */
 @media (max-width: 640px) {
-  .gcard { width: 62vw; }
-  .gallery { padding-top: 70px; }
-  .hero { min-height: 720px; }
-  .hero__content { padding-top: 32px; padding-bottom: 150px; }
+  html { scroll-padding-top: 64px; }
+
+  /* one slim bar that stays at the top */
+  .site-header { position: sticky; top: 0; z-index: 50; flex-wrap: nowrap; gap: 12px;
+    padding-top: max(8px, env(safe-area-inset-top, 0px)); padding-bottom: 8px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+    background: rgba(14, 11, 20, .9); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .brand { flex-wrap: nowrap; flex: 0 0 auto; }
+  .brand__logo { height: 30px; }
+  .brand__uni, .brand__mark { display: none; }
+  .nav { flex-wrap: nowrap; gap: 14px; }
+  .nav a { font-size: 11px; letter-spacing: .5px; padding: 16px 0; white-space: nowrap; }
+
+  /* hero */
+  .hero { min-height: 640px; }
+  .hero__content { padding-top: 28px; padding-bottom: 140px; gap: 22px; }
   .hero__lead { font-size: 17px; }
-  .countdown__box { min-width: 72px; padding: 12px 8px; }
-  .countdown__box span { font-size: 34px; }
-  .brand__uni, .brand__mark { padding-left: 12px; }
-  .nav { gap: 16px; }
-  .heat { padding: 32px 20px; }
+  .countdown { gap: 8px; }
+  .countdown__box { min-width: 0; flex: 1 1 0; padding: 12px 6px; }
+  .countdown__box span { font-size: 32px; }
+  .countdown__box small { font-size: 10px; letter-spacing: 2px; }
+  .actions { gap: 12px; }
+  .actions .btn { flex: 1 1 100%; justify-content: center; }
+
+  /* event details as a 2 x 2 grid */
+  .details__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .details__item { padding: 18px 16px; gap: 6px; }
+  .details__item span { font-size: 11px; letter-spacing: 2px; }
+  .details__item strong { font-size: 22px; }
+
+  /* tighter sections */
+  .section { padding-top: 64px; gap: 28px; }
+  .section__note { font-size: 16px; }
+  .mission { padding: 24px 20px; }
+  .mission__num { font-size: 52px; }
+  .mission__title { font-size: 30px; }
+  .heat { padding: 28px 20px; gap: 28px; }
+  .gcard { width: 62vw; }
+  .gallery { padding-top: 56px; padding-bottom: 40px; }
+  .join__inner { padding-top: 80px; padding-bottom: 80px; }
+  .footer__brand img { height: 32px; }
+}
+
+@media (max-width: 370px) {
+  .nav { gap: 10px; }
+  .nav a { font-size: 10px; letter-spacing: 0; }
+  .brand__logo { height: 26px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -180,7 +180,7 @@ export default function Home() {
       <section id="join" className="join">
         <div className="container join__inner">
           <p className="eyebrow">Join the crew</p>
-          <h2 className="h2 h2--xl">Find a partner.<br /><span className="accent">Keep your mouth shut.</span></h2>
+          <h2 className="h2 h2--xl">Find a partner.</h2>
           <p>Registrations open soon. Teams of two, open to all Bennett students.</p>
           <a href="[REGISTRATION LINK]" className="btn btn--solid">Register now</a>
           <p className="join__devs">Developed by <strong>Abdul Sameer</strong>, <strong>Ayan Bhoumick</strong> &amp; <strong>Priyanshu Saxena</strong></p>

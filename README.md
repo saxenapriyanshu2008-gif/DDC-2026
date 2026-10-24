@@ -1,6 +1,6 @@
-# DDC 2026: Drink. Derive. Code.
+# DDC 2026: Drink. Derive. Code 3.
 
-Event website for **DDC 2026**, run by the ACM Student Chapter at Bennett University on 29 October 2026.
+Event website for **DDC 3.02026**, run by the ACM Student Chapter at Bennett University on 29 October 2026.
 
 Two players. One laptop. Zero talking. Three missions:
 
@@ -12,26 +12,30 @@ Talk during a mission and you take an amla or sour shot. Three shots and your cr
 
 ## What's in here
 
-| File | What it does |
+| Path | What it does |
 | --- | --- |
-| `index.html` | The page. Links everything below. |
-| `css/style.css` | Site styling |
-| `css/intro.css` | Opening intro styling |
-| `js/main.js` | Live countdown, pauses the trailer when scrolled away |
-| `js/intro.js` | Opening intro (ACM Bennett presents, DDC'26) with Skip and Sound on |
-| `assets/` | Logo, Bennett banner, trailer video and poster |
+| `app/page.tsx` | The page (server component) |
+| `app/layout.tsx` | Root layout, metadata, fonts |
+| `app/globals.css` | All styling (site + intro) |
+| `app/components/Intro.tsx` | Opening intro with Skip and Sound on |
+| `app/components/Countdown.tsx` | Live countdown to the event |
+| `app/components/VideoPlayer.tsx` | Trailer video, pauses when scrolled away |
+| `public/assets/` | Logo, Bennett banner, trailer video and poster |
 
 ## Run it
 
-No build step. Open `index.html` in a browser, or serve the folder:
-
 ```
-npx serve .
+npm install
+npm run dev
 ```
 
 ## Deploy
 
-Drag the folder onto [app.netlify.com/drop](https://app.netlify.com/drop), or turn on GitHub Pages for this repo (Settings > Pages > Deploy from branch > `main` / root).
+```
+npm run build
+```
+
+Deploy the `.next` output to Vercel, or use any Node hosting that supports Next.js.
 
 ## Still to fill in
 

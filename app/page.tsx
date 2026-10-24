@@ -34,7 +34,7 @@ export default function Home() {
             <span className="brand__name">Bennett University</span>
             <span className="brand__sub">ACM Student Chapter</span>
           </div>
-          <div className="brand__mark">DDC<span>.</span>26</div>
+          <div className="brand__mark">DDC<span>.</span>3.0</div>
         </div>
         <nav className="nav" aria-label="Main">
           <a href="#teaser">Teaser</a>
@@ -45,6 +45,9 @@ export default function Home() {
       </header>
 
       <section className="hero">
+        <video className="hero__video" autoPlay muted loop playsInline aria-hidden="true">
+          <source src="/assets/hero-video.mp4" type="video/mp4" />
+        </video>
         <div className="hero__sky" aria-hidden="true" />
         <div className="hero__sun" aria-hidden="true" />
         <div className="hero__stripes" aria-hidden="true" />
@@ -105,7 +108,11 @@ export default function Home() {
               <li>Break the rule and you take a sour shot</li>
               <li>Fastest crew to solve every problem wins the mission</li>
             </ul>
-            <a className="mission__btn" href="[ROUND 1 LINK]">Round 1<svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18"><path d="M3 9h11M10 4l5 5-5 5" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" /></svg></a>
+            <div className="mission__rounds">
+              <a className="mission__btn" href="[ROUND 1 LINK]">1</a>
+              <a className="mission__btn" href="[ROUND 2 LINK]">2</a>
+              <a className="mission__btn" href="[ROUND 3 LINK]">3</a>
+            </div>
           </article>
           <article className="mission mission--orange">
             <div className="mission__top"><span className="mission__num">02</span><span className="mission__label">Mission</span></div>
@@ -176,6 +183,7 @@ export default function Home() {
           <h2 className="h2 h2--xl">Find a partner.<br /><span className="accent">Keep your mouth shut.</span></h2>
           <p>Registrations open soon. Teams of two, open to all Bennett students.</p>
           <a href="[REGISTRATION LINK]" className="btn btn--solid">Register now</a>
+          <p className="join__devs">Developed by <strong>Abdul Sameer</strong>, <strong>Ayan Bhoumick</strong> &amp; <strong>Priyanshu Saxena</strong></p>
         </div>
       </section>
 
